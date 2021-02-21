@@ -49,13 +49,14 @@ function draw() {
     player.velocityY = player.velocityY + 0.8;
   
     player.collide(ground);
-
+    
+    drawSprites();
   }
 
 function spawnFood(){
   if(frameCount % 80===0){
 var banana = createSprite(600,250,40,10);
-banana.y = random(120,200);
+banana.y =Math.round(random(height-120,height-200));
 banana.addImage(bananaImage);
 banana.scale = 0.05;
 banana.velocityX = -4;
@@ -91,5 +92,5 @@ text("Game Over",300,220);
 
 
 
-  drawSprites();
+  
 }
